@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_Float.html</title>
+    <link rel="stylesheet" href="sheets/css14.css">
+</head>
+<body>
+
+    <h3># 14_Float</h3>
+
+    <ul>
+        <li>해당 요소를 float으로 설정하면 다른 내용들이 해당 요소를 비켜가게 만든다</li>
+        <li>float: left로 설정하면 해당 요소가 왼쪽에 떠있게 되고</li>
+        <li>float: right로 설정하면 해당 요소가 오른쪽에 떠있게 된다</li>
+        <li>float을 같은 방향으로 설정한 요소는 차곡차곡 쌓인다</li>
+        <li>float을 다른 방향으로 설정한 요소는 각자의 방향으로 쌓인다</li>
+        <li>clear 속성을 통해 해당 방향에 요소가 계속 쌓이는 것을 막을 수 있다</li>
+        <li>float이 설정된 요소는 해당 요소를 포함한 부모 요소의 크기 결정에 영향을 미치지 못한다</li>
+    </ul>
+
+    <h5>float을 같은 방향으로 설정한 경우</h5>
+    <div id="float-div1">
+        <img id="img1-1" src="../assets/image/samsaek.jpg" alt="cat">
+        <img id="img1-2" src="../assets/image/samsaek1.jpg" alt="cat1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Ipsum exercitationem explicabo, vitae ea ipsam dolores facilis, 
+        labore qui consectetur accusantium quas eos.
+        Harum sint officiis dolorem aspernatur magni totam iusto.
+    </div>
+
+    <h5>float을 다른 방향으로 설정한 경우</h5>
+    <div id="float-div1">
+        <img id="img2-1" src="../assets/image/samsaek2.jpg" alt="cat">
+        <img id="img2-2" src="../assets/image/samsaek3.jpg" alt="cat1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Ipsum exercitationem explicabo, vitae ea ipsam dolores facilis, 
+        labore qui consectetur accusantium quas eos.
+        Harum sint officiis dolorem aspernatur magni totam iusto.
+    </div>
+
+    <h5>clear 속성을 사용해</h5>
+    <div id="float-div3">
+        <img id="img3-1" src="../assets/image/samsaek4.jpg" alt="cat">
+        <img id="img3-2" src="../assets/image/samsaek5.jpg" alt="cat1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Ipsum exercitationem explicabo, vitae ea ipsam dolores facilis, 
+        labore qui consectetur accusantium quas eos.
+        Harum sint officiis dolorem aspernatur magni totam iusto.
+    </div>
+
+    <h5>float 요소의 크기에 비해 내용이 부족한 경우 요소의 크기를 float요소의 크기만큼 늘리는 방법</h5>
+    <div id="float-div4">
+        <img id="img4-1" src="../assets/image/samsaek3.jpg" alt="cat1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        <div style="clear: right;"></div>
+    </div>
+
+    <h5>float 요소의 크기에 비해 내용이 부족한 경우 부모 요소의 크기가 이상해진다</h5>
+    <div id="float-div4">
+        <img id="img5-1" src="../assets/image/samsaek3.jpg" alt="cat1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    </div>
+
+    <br><br><br><br><br><br><br>
+
+    <h5>float의 성질을 이용해 레이아웃 구성하기 (구세대 방식)</h5>
+
+    <div id="float-layout">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+
+    <br><br><br><br>
+
+    <div id="test">
+        <div>HEADER</div>
+        <div>NAV</div>
+        <div>SECTION</div>
+        <div>ASIDE</div>
+        <div>ARTICLE</div>
+        <div>FOOTER</div>
+    </div>
+    
+</body>
+</html>

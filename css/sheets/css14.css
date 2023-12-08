@@ -1,0 +1,179 @@
+[id*="div"] {
+    border: 3px solid black;
+    width: 400px;
+    text-align: justify;
+}
+
+#img1-1 {
+    width: 150px;
+    height: auto;
+    float: right;
+}
+
+#img1-2 {
+    width: 150px;
+    height: auto;
+    float: right;
+}
+
+#img2-1 {
+    width: 150px;
+    height: auto;
+    float: left;
+}
+
+#img2-2 {
+    width: 150px;
+    height: auto;
+    float: right;
+}
+
+#img3-1 {
+    width: 150px;
+    height: auto;
+    float: left;
+}
+
+#img3-2 {
+    width: 150px;
+    height: auto;
+    float: right;
+    clear: left; /* 왼쪽에 다른 float 요소가 없게끔 해달라는 설정 */
+}
+
+#img4-1 {
+    width: 150px;
+    height: auto;
+    float: right;
+}
+
+#img5-1 {
+    width: 150px;
+    height: auto;
+    float: right;
+}
+
+#float-layout {
+    width: 1000px;
+    border: 1px solid black;
+    color: white;
+}
+
+#float-layout > div {
+    height: 100px;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#float-layout > :first-child {
+    background-color: maroon;
+    width: 20%;
+}
+
+#float-layout > :nth-child(2) {
+    background-color: salmon;
+    width: 60%;
+}
+
+#float-layout > :nth-child(3) {
+    background-color: seagreen;
+    width: 20%;
+}
+
+#float-layout > :nth-child(4) {
+    background-color: burlywood;
+    height: 500px;
+    width: 80%;
+}
+
+#float-layout > :nth-child(5) {
+    background-color: darkslateblue;
+    height: 500px;
+    width: 20%;
+}
+
+#float-layout::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#float-layout {
+    width: 1000px;
+    border: 1px solid black;
+    color: white;
+}
+
+#float-layout > div {
+    height: 100px;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#test {
+    width: 1000px;
+    border: 1px solid black;
+    color: navy;
+    text-align: center;
+}
+
+#test > div {
+    height: 100px;
+    box-sizing: border-box;
+    padding-top: 40px;
+}
+
+#test > :first-child {
+    background-color: red;
+    width: 100%;
+    float: left;
+    border: 1px solid black;
+}
+
+#test > :nth-child(2) {
+    background-color: orange;
+    width: 100%;
+    float: left;
+    border: 1px solid black;
+}
+
+#test > :nth-child(3) {
+    background-color: yellow;
+    width: 80%;
+    float: left;
+    border: 1px solid black;
+}
+
+#test > :nth-child(4) {
+    background-color: green;
+    width: 20%;
+    height: 500px;
+    float: right;
+    padding-top: 20%;
+    border: 1px solid black;
+}
+
+#test > :nth-child(5) {
+    background-color: skyblue;
+    width: 80%;
+    height: 400px;
+    float: left;
+    padding-top: 15%;
+    border: 1px solid black;
+}
+
+#test > :nth-child(6) {
+    background-color: violet;
+    width: 100%;
+    float: left;
+    border: 1px solid black;
+}
+
+#test::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
