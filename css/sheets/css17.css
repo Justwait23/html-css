@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+}
+
+.flex-container {
+    /* 이 요소의 자식 요소들은 모두 flex-item 취급을 받게 됨 */
+    display: flex;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: rgb(99, 11, 99);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.flex-item {
+    background-color: orange;
+    padding: 20px;
+    margin: 10px;
+    width: 80px;
+}
+
+.flex-container:first-of-type > .flex-item:nth-child(2) {
+    width: 200px;
+    color: white;
+}
+
+#direction1 {
+    flex-direction: row; /* 기본값, 행 모양 -> */
+}
+
+#direction1 > .flex-item {
+    height: 200px;
+}
+
+#direction2 {
+    flex-direction: row-reverse; /* 행 모양인데 오른쪽부터 <- */
+}
+
+#direction3 {
+    flex-direction: column; /* 열 모양 ↓ */
+    width: max-content;
+}
+
+#direction3 > .flex-item {
+    width: 300px;
+}
+
+#direction4 {
+    flex-direction: column-reverse; /* 열 모양 ↑ */ 
+    width: min-content;
+}
+
+#direction4 > .flex-item {
+    width: 300px;
+}
+
+#wrap1 {
+    flex-wrap: nowrap; /* 요소 크기가 넘쳐도 줄을 바꾸지 않고 요소의 크기를 줄인다 */
+}
+
+#wrap1 > .flex-item {
+    width: 200px;
+}
+
+#wrap2 {
+    flex-wrap: wrap; /* 요소 크기가 넘치면 자동으로 줄을 바꾼다*/
+}
+
+#wrap2 > .flex-item {
+    width: 200px;
+}
+
+#wrap3 {
+    flex-wrap: wrap-reverse; /* 요소 크기가 넘치면 줄을 위로 바꾼다 */
+}
+
+#wrap3 > .flex-item {
+    width: 200px;
+}
+
+#wrap4 {
+    flex-direction: column-reverse;    
+    flex-wrap: wrap-reverse;
+    height: 80vw;
+}
+
+#wrap4 > .flex-item {
+    height: 100px;
+}
+
+#flow1 {
+    flex-flow: row nowrap; /* 기본값 */
+}
+
+#flow2 {
+    /* flex-direction과 flex-wrap을 한번에 조절할 수 있는 간편 속성 */
+    flex-flow: row-reverse wrap;
+}
+
+[id^="justify"] > .flex-item {
+    height: 200px;
+}
+
+#justify1 {
+    /* (기본값) flex의 시작부분으로 내부 아이템들을 정렬 */
+    justify-content: flex-start;
+}
+
+#justify2 {
+    /* flex의 끝부분으로 내부 아이템을 정렬 */
+    justify-content: flex-end;
+}
+
+#justify3 {
+    /* 내부 아이템들을 가운데 정렬 */
+    justify-content: center;
+}
+
+#justify4 {
+    /* 내부의 요소들을 균형있게 배치해준다 */
+    justify-content: space-between;
+}
+
+#justify5 {
+    /* 내부의 요소들을 균형있게 배치해준다 */
+    justify-content: space-around;
+}
+
+#justify6 {
+    justify-content: space-evenly;
+}
+
+.flex-layout {
+    display: flex;
+    flex-wrap: wrap;
+    height: 800px;
+    align-content: space-between;
+    background-color: darkred;
+}
+
+.flex-layout > div {
+    font-size: 30px;
+    padding: 20px;
+}
+
+.flex-layout > :first-child {
+    width: 70%;
+    height: 10%;
+    background-color: cornsilk;
+}
+
+.flex-layout > :nth-child(2) {
+    width: 30%;
+    height: 10%;
+    background-color: salmon;
+}
+
+.flex-layout > :nth-child(3) {
+    width: 20%;
+    height: 65%;
+    background-color: greenyellow;
+}
+
+.flex-layout > :nth-child(4) {
+    width: 80%;
+    height: 65%;
+    background-color: slateblue;
+}
+
+.flex-layout > :nth-child(5) {
+    width: 100%;
+    height: 20%;
+    background-color: skyblue;
+}
+
+#quiz {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: 800px;
+    padding: 10px;
+    border-radius: solid 3px black;
+}
+
+#quiz > :first-child {
+    width: 40%;
+    height: 50%;
+    padding: 10px;
+}
+
+#quiz > :first-child > div {
+    background-color: salmon;
+    width: 100%;
+    height: 100%;
+}
+
+#quiz > :nth-child(2) {
+    width: 60%;
+    height: 50%;
+    padding: 10px;
+}
+
+#inner1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+#inner1 > div {
+    width: 48%;
+    height: 47%;
+    background-color: salmon;
+}
+
+#quiz > :nth-child(3) {
+    width: 60%;
+    height: 50%;
+    padding: 10px;
+}
+
+#inner2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+#inner2 > div {
+    width: 48%;
+    height: 47%;
+    background-color: salmon;
+}
+
+#quiz > :nth-child(4) {
+    width: 40%;
+    height: 50%;
+    padding: 10px;
+}
+
+#quiz > :nth-child(4) > div {
+    background-color: salmon;
+    width: 100%;
+    height: 100%;
+}
+
