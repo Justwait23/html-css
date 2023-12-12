@@ -1,0 +1,35 @@
+#header {
+    background: lightgray;
+    height: 215px;
+    background-image: url(../images/1.PNG);
+  }
+#main {
+    background: #f2f4f7;
+  }
+#footer {
+    background: darkgray;
+    height: 310px;
+  }
+
+#grid-container {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 10px;
+}
+
+.four-box {
+    grid-column: span 3;
+}
+
+#grid-container > div {
+    font-size: 30px;
+    border: solid black 3px;
+    padding: 15px;
+}
+
+#div1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-image: url(../images/2.PNG);
+}
+

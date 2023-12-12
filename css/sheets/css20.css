@@ -1,0 +1,18 @@
+#grid-container {
+    display: grid;
+    /* 3 columns */
+    grid-template-columns: 100px 200px 100px;
+    /* 3 rows */
+    grid-template-rows: 80px 500px 150px;
+}
+
+#grid-container > div {
+    font-size: 30px;
+    border: solid black 3px;
+    padding: 15px;
+}
+
+#div7 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
