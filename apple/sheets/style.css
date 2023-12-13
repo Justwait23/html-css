@@ -1,35 +1,137 @@
-#header {
-    background: lightgray;
-    height: 215px;
-    background-image: url(../images/1.PNG);
-  }
-#main {
-    background: #f2f4f7;
-  }
-#footer {
-    background: darkgray;
-    height: 310px;
+body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
   }
 
-#grid-container {
+a {
+    text-decoration: none;
+    color: #c1c1c1;
+    padding: 0px 22px;
+    font-size: 12px;
+    flex-wrap: nowrap;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    background-color: #424245;
+    color: #f5f5f7;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+  }
+header > li {
+    color: #f5f5f7;
+}
+
+#logo {
+    padding-left: 20px;
+}
+
+#menu {
+    display: flex;
+    padding: 5px 20px;
+    list-style: none;
+    margin: 0px 8px;
+  }
+
+#menu > li {
+    padding: 5px 0px;
+}
+
+#menu li:hover {
+    background-color: lightgrey;
+    border-radius: 5%;
+} 
+
+#icons {
+    display: flex;
+}
+
+#icons > li {
+    padding-left: 10px;
+    padding-right: 10px;
+    list-style: none;
+}
+
+.big-image {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.big-image > h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.big-image > h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+#link1 a {
+    font-size: 16px;
+    color: #0066CC;
+    font-weight: 500;
+}
+
+.big-image > #link1:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+.grid-container {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    margin: 20px;
 }
 
-.four-box {
-    grid-column: span 3;
+.grid-item {
+    overflow: hidden;
 }
 
-#grid-container > div {
-    font-size: 30px;
-    border: solid black 3px;
-    padding: 15px;
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-#div1 {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    background-image: url(../images/2.PNG);
+.footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+}
+
+.footer-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+}
+
+.footer-list a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-list a:hover {
+    text-decoration: underline;
 }
 
