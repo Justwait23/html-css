@@ -1,29 +1,12 @@
-.ball {
-    display: flex;
+.dynamic-ball {
+    float: left;
     width: 60px;
     height: 60px;
+    line-height: 60px;
     font-size: 28px;
     border-radius: 100%;
     text-align: center;
+    background-color: purple;
     color: white;
-    font-weight: 500;
+    margin-right: 16px;
 }
-/* 
-.ball1 {
-    background: red;
-}
-.ball2 {
-    background: orange;
-}
-.ball3 {
-    background: yellow;
-}
-.ball4 {
-    background: green;
-}
-.ball5 {
-    background: blue;
-}
-.ball6 {
-    background: navy;
-} */

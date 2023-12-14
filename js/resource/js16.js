@@ -94,12 +94,20 @@ for (const number of numbers) {
 // 내림차순
 countsArray.sort((a, b) => b.count - a.count);
 
-console.log(countsArray)
+const topNumbers = countsArray.slice(0, 6);
 
-const topNumber = countsArray.slice(0, 6);
+console.log(topNumbers);
 
-console.log(topNumber);
+const ballsContainer = document.getElementById('result');
 
-const topNumberHtml = document.getElementById('ball');
+let ballsHTML = '';
+
+for (let i = 0; i < topNumbers.length; i++) {
+    const number = topNumbers[i].number;
+    const ballClass = `dynamic-ball ball${i + 1}`;
+    ballsHTML += `<div class="${ballClass}">${number}</div>`;
+}
+
+ballsContainer.innerHTML = ballsHTML;
 
 
