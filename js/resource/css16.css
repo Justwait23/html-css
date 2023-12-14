@@ -1,0 +1,29 @@
+.ball {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    border-radius: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+}
+/* 
+.ball1 {
+    background: red;
+}
+.ball2 {
+    background: orange;
+}
+.ball3 {
+    background: yellow;
+}
+.ball4 {
+    background: green;
+}
+.ball5 {
+    background: blue;
+}
+.ball6 {
+    background: navy;
+} */
