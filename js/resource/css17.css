@@ -1,0 +1,23 @@
+table {
+    border-collapse: collapse;
+    width: 30%;
+}
+th, td {
+    border: solid 3px black;
+    text-align: center;
+    padding: 10px;
+    color: black;
+}
+th {
+    background-color: white;
+}
+
+[id$="-students"] {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+[id$="-students"] > div {
+    border: solid 1px black;
+}
+

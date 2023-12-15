@@ -1,4 +1,4 @@
-.dynamic-ball {
+/* .dynamic-ball {
     float: left;
     width: 60px;
     height: 60px;
@@ -9,4 +9,20 @@
     background-color: purple;
     color: white;
     margin-right: 16px;
+} */
+
+#lotto {
+    display: flex;
+}
+
+#lotto > div {
+    box-sizing: border-box;
+    padding: 35px;
+    font-size: 30px;
+    border-radius: 50%;
+    background-color: tomato;
+    color: white;
+    width: 120px;
+    height: 120px;
+    text-align: center;
 }

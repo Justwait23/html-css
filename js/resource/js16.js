@@ -64,50 +64,96 @@ console.log(sorted);
 
 */
 
-const numbers = [];
+// 내 풀이
+// const numbers = [];
+// for (let i = 0; i < 1000; i++) {
+//     const randomNum = parseInt(Math.random() * 45) + 1;
+//     numbers.push(randomNum);
+// }
+// // 카운트 배열
+// const countsArray = [];
+
+// for (const number of numbers) {
+
+//     let found = false;
+
+//     for (const item of countsArray) {
+//         if (item.number === number) {
+//             // 숫자가 이미 있으면 횟수 증가
+//             item.count++;
+//             found = true;
+//             break;
+//         }
+//     }
+//     // 숫자가 없으면 배열에 추가하고 횟수 1로 만들기
+//     if (!found) {
+//         countsArray.push({number, count: 1});
+//     }
+// }
+// // 내림차순
+// countsArray.sort((a, b) => b.count - a.count);
+
+// console.log(countsArray);
+
+// const topNumbers = countsArray.slice(0, 6);
+
+// console.log(topNumbers);
+
+// const ballsContainer = document.getElementById('result');
+
+// let ballsHTML = '';
+
+// for (let i = 0; i < topNumbers.length; i++) {
+//     const number = topNumbers[i].number;
+//     const ballClass = `dynamic-ball ball${i + 1}`;
+//     ballsHTML += `<div class="${ballClass}">${number}</div>`;
+// }
+
+// ballsContainer.innerHTML = ballsHTML;
+
+
+// 선생님 풀이
+
+const lottoDiv = document.getElementById('lotto');
+
+const lottoNums = [];
+
 for (let i = 0; i < 1000; i++) {
-    const randomNum = parseInt(Math.random() * 45) + 1;
-    numbers.push(randomNum);
+    lottoNums.push(parseInt(Math.random() * 45) + 1);
 }
 
-// console.log(numbers);
+const lottoCnt = [];
 
-const countsArray = [];
-
-for (const number of numbers) {
-
-    let found = false;
-
-    for (const item of countsArray) {
-        if (item.number === number) {
-            // 숫자가 이미 있으면 횟수 증가
-            item.count++;
-            found = true;
-            break;
-        }
-    }
-    // 숫자가 없으면 배열에 추가하고 횟수 1로 만들기
-    if (!found) {
-        countsArray.push({number, count: 1});
-    }
-}
-// 내림차순
-countsArray.sort((a, b) => b.count - a.count);
-
-const topNumbers = countsArray.slice(0, 6);
-
-console.log(topNumbers);
-
-const ballsContainer = document.getElementById('result');
-
-let ballsHTML = '';
-
-for (let i = 0; i < topNumbers.length; i++) {
-    const number = topNumbers[i].number;
-    const ballClass = `dynamic-ball ball${i + 1}`;
-    ballsHTML += `<div class="${ballClass}">${number}</div>`;
+function LottoNum(num, cnt) {
+    this.num = num;
+    this.cnt = cnt;
 }
 
-ballsContainer.innerHTML = ballsHTML;
+// for (let i = 0; i < 45; i++) {
+//     lottoCnt[i] = {
+//         num: i + 1,
+//         cnt: 0
+//     };
+// }
 
+for (let i = 0; i < 45; i++) {
+    lottoCnt[i] = new LottoNum(i + 1, 0);
+}
+
+
+for (let i = 0; i < 1000; i++) {
+    lottoCnt[lottoNums[i] - 1].cnt++;
+}
+
+
+lottoCnt.sort((a, b) => {
+    return b.cnt - a.cnt;
+});
+
+lottoDiv.innerHTML += `<div>${lottoCnt[0].num}</div>`;
+lottoDiv.innerHTML += `<div>${lottoCnt[1].num}</div>`;
+lottoDiv.innerHTML += `<div>${lottoCnt[2].num}</div>`;
+lottoDiv.innerHTML += `<div>${lottoCnt[3].num}</div>`;
+lottoDiv.innerHTML += `<div>${lottoCnt[4].num}</div>`;
+lottoDiv.innerHTML += `<div>${lottoCnt[5].num}</div>`;
 
