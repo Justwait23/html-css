@@ -1,0 +1,14 @@
+#out {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    z-index: 0;
+}
+
+.star-number {
+    position: relative;
+    top: -25px;
+    right: -30px;
+    background-color: white;
+    padding: 2px;
+    z-index: -1;
+}
