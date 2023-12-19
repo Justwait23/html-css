@@ -20,54 +20,88 @@ console.log(data3);
 
 const game = document.getElementById('game');
 let numbers = [];
-let currentNum = 1;
-let startTimer;
-
-for (let i = 1; i <= 25; i++) {
+for (let i = 1; i <= 50; i++) {
     numbers.push(i);
 }
+let selectedNumbers = numbers.slice(0, 25);
+let nextNumbers = numbers.slice(25, 51);
 
-numbers.sort(() => Math.random() - 0.5);
+let startTime = null;
+let interval = null;
+let nextNumber = 1;
 
-numbers.forEach(createBtn);
+// 섞기
+function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
 
-startTimer = new Date();
+// 시간 업데이트
+function updateTime() {
+    const currentTime = new Date();
+    const timeDiff = currentTime - startTime;
 
-// 버튼 만들기
+    document.querySelector('#time').textContent = (timeDiff / 1000) .toFixed(2);
+}
+
+// 버튼
 function createBtn(number) {
-    const btn = document.createElement('btn');
+    const btn = document.createElement('button');
     btn.innerText = number;
-    btn.onclick = () => clickBtn(btn, number);
+    btn.onclick = () => handleClick(btn);
     game.appendChild(btn);
 }
 
-// 숫자 버튼
-function clickBtn(btn, clickNum) {
-    if (clickNum === currentNum) {
-        btn.style.display = 'none';
-        numbers.shift();
-        currentNum++;
-
-        if (currentNum < 50) {
-            const nextBtn = document.createElement('btn');
-            nextBtn.innerText = currentNum;
-            nextBtn.onclick = () => clickBtn(nextBtn, currentNum);
-            game.appendChild(nextBtn);
-        }
-    } 
-}
-
-// 다시하기 버튼을 누르면 숫자판 초기화
-function resetGame() {
-    game.innerHTML = '';
-    numbers = [];
-
-    for (let i = 1; i <= 25; i++) {
-        numbers.push(i);
+// 보드 생성
+function createBoard() {
+    shuffle(selectedNumbers);
+    shuffle(nextNumbers)
+    for (let i = 0; i < 25; i++) {
+        createBtn(selectedNumbers[i]);
     }
-    numbers.sort(() => Math.random() - 0.5);
-    numbers.forEach(createBtn);
+}
+
+// 숫자 버튼
+function handleClick(num) {
+    if (num.innerText === '1') {
+        startTime = new Date();
+        interval = setInterval(updateTime, 10);
+    }
+    const clickNum = parseInt(num.textContent);
+    if (clickNum === nextNumber) {
+        num.classList.add('selected');
+        num.textContent = '';
+        if (nextNumber <= 25) {
+            num.textContent = nextNumbers[clickNum - 1];
+        } else if (nextNumber === 50) {
+            clearInterval(interval);
+            recordTime();
+            alert('축하!')
+        }
+        nextNumber++;
+    }
+}
+
+function recordTime() {
+    const currentTime = new Date();
+    const timeDiff = currentTime - startTime;
+    const passTime = (timeDiff / 1000).toFixed(2);
+
+    // 로컬 스토리지에 시간 저장
+    localStorage.setItem('gameTime', passTime);
 }
 
 
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', resetBoard);
 
+function resetBoard() {
+    game.innerHTML = '';
+    createBoard();
+    nextNumber = 1;
+    clearInterval(interval); // 타이머를 초기화
+    document.querySelector('#time').textContent = '0.00'; // 시간을 초기화
+
+}
+
+// 초기 보드 생성
+createBoard();
