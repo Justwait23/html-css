@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23_WebStorage.html</title>
+    <link rel="stylesheet" href="resource/css23.css">
+</head>
+<body>
+
+    <h3># Web Storage API</h3>
+
+    <ul>
+        <li>웹 브라우저에 데이터를 보관할 수 있는 공간</li>
+        <li>데이터를 key-value 형식으로 저장할 수 있다</li>
+        <li>로컬 스토리지는 웹 브라우저가 종료하더라도 데이터가 유지된다</li>
+        <li>세션 스토리지는 웹 브라우저를 종료하면 데이터가 세션과 함께 만료된다 
+            (세션: 서버와 연결이 유지되고 있는 상태, ex: 은행 사이트 로그인)</li>
+    </ul>
+
+    <h3># 1to50 만들기</h3>
+
+    <ul>
+        <li>5X5 박스 1번부터 50번까지 순서대로 버튼을 누르는 게임 만들어보기</li>
+        <li>게임이 끝날 때 전적을 로컬스토리지에 기록하기</li>
+        <li>랭킹을 순서대로 출력해주기</li>
+    </ul>
+
+    <h3>1 to 50</h3>
+    <h5>1부터 50까지 순서대로 터치하여 없애보세요. (for mobile)</h5>
+
+    
+    <button>다시하기</button>
+    <button>랭킹보기</button>
+
+    <div id="game"></div>
+
+
+
+    <script src="resource/js23.js"></script>
+    
+</body>
+</html>
