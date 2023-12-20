@@ -8,10 +8,19 @@
     width: 500px;
     margin: 10px;
     text-align: center;
-    font-size: 25px;
     color: white;
 }
 
 #game > button {
     background-color: rgb(39, 130, 204);
+    font-size: 50px;
+    color: black;
+}
+
+#game > .selected {
+    background-color: aquamarine;
+}
+
+#game > .lastSelected {
+    background-color: white;
 }

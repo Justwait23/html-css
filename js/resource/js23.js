@@ -23,7 +23,7 @@ let numbers = [];
 for (let i = 1; i <= 50; i++) {
     numbers.push(i);
 }
-let selectedNumbers = numbers.slice(0, 25);
+let firstNumbers = numbers.slice(0, 25);
 let nextNumbers = numbers.slice(25, 51);
 
 let startTime = null;
@@ -53,10 +53,10 @@ function createBtn(number) {
 
 // 보드 생성
 function createBoard() {
-    shuffle(selectedNumbers);
+    shuffle(firstNumbers);
     shuffle(nextNumbers)
     for (let i = 0; i < 25; i++) {
-        createBtn(selectedNumbers[i]);
+        createBtn(firstNumbers[i]);
     }
 }
 
@@ -72,6 +72,7 @@ function handleClick(num) {
         num.textContent = '';
         if (nextNumber <= 25) {
             num.textContent = nextNumbers[clickNum - 1];
+
         } else if (nextNumber === 50) {
             clearInterval(interval);
             recordTime();
@@ -102,6 +103,8 @@ function resetBoard() {
     document.querySelector('#time').textContent = '0.00'; // 시간을 초기화
 
 }
+
+const nextHint = document.getElementById('hint');
 
 // 초기 보드 생성
 createBoard();
